@@ -38,6 +38,30 @@ class Game extends React.Component {
     }
   }
 
+  render() {
+    return (
+      <div>
+        <Board
+          player={this.state.player}
+          changePlayer={this.switchPlayer}
+          endGame={this.setWinner}
+          won={this.state.won}
+          turns={this.state.turns}
+          update={this.updateBoard}
+          board={this.state.board}/>
+        <GameStatus
+          winner={this.state.winner}
+          currentPlayer={this.state.player}
+          won={this.state.won}
+          turns={this.state.turns}/>
+        <NewGame
+          won={this.state.won}
+          turns={this.state.turns}
+          startNewGame={this.reset}/>
+      </div>
+      )
+  }
+
 }
 
 export default Game;
