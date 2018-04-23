@@ -40,6 +40,18 @@ const Board = props => {
     return false;
   }
 
+  const checkForWinner = function() {
+    if (
+      (checkColumnsForWinner() === true) ||
+      (checkRowsForWinner() === true) ||
+      (checkDiagonalsForWinner() === true)
+      ) {
+        props.endGame();
+      } else {
+        props.changePlayer();
+      }
+  }
+
 }
 
 export default Board;
