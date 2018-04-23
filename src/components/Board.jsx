@@ -31,6 +31,15 @@ const Board = props => {
     return false;
   }
 
+  const checkDiagonalsForWinner = function() {
+    const board = props.board;
+    if ((board[4] !== "") && (((board[0] === board[4]) && (board[0] === board[8])) ||
+    ((board[2] === board[4]) && (board[2] === board[6])))) {
+      return true;
+    }
+    return false;
+  }
+
 }
 
 export default Board;
