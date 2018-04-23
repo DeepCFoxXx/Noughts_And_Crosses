@@ -67,6 +67,19 @@ const Board = props => {
       />
   )
 
+  return (
+    <div>
+      <h1>Noughts And Crosses</h1>
+      <table>
+        <tbody>
+          {row(0)}
+          {row(3)}
+          {row(6)}
+        </tbody>
+      </table>
+    </div>
+  )
+
 }
 
 export default Board;
