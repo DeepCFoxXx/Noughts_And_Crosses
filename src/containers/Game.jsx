@@ -24,6 +24,20 @@ class Game extends React.Component {
     this.setState({ winner: this.state.player, won: true });
   }
 
+  updateBoard(square) {
+    const updatedGrid = this.state.board;
+    updatedGrid[square] = this.state.player;
+    this.setState({ board: updatedGrid });
+  }
+
+  switchPlayer() {
+    if (this.state.player === "X") {
+      this.setState({ player: "O", turns: this.state.turns + 1 });
+    } else {
+      this.setState({ player: "X", turns: this.state.turns + 1 });
+    }
+  }
+
 }
 
 export default Game;
