@@ -52,6 +52,21 @@ const Board = props => {
       }
   }
 
+  const takeTurn = function(square) {
+    props.update(square);
+    checkForWinner();
+  }
+
+  const row = (firstCell) => (
+      <Row
+        firstCell={firstCell}
+        player={props.player}
+        playSquare={takeTurn}
+        gameWon={props.won}
+        board={props.board}
+      />
+  )
+
 }
 
 export default Board;
