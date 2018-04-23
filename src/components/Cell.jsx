@@ -14,6 +14,21 @@ class Cell extends React.Component{
     this.setState({ contents: this.props.contents });
   }
 
+  render(){
+    if (this.props.contents === "" && this.props.gameWon === false) {
+      return(
+        <td>
+          <button className="gridCell" onClick={this.selectSquare}></button>
+        </td>
+      )
+    }
+    return (
+      <td>
+        { this.props.contents }
+      </td>
+    )
+  }
+
 }
 
 export default Cell;
